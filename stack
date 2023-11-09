@@ -1,0 +1,55 @@
+class Stack:
+    print(' __________Enter number and push/pop (exit/out to exit)__________')
+
+    def __new__(cls):
+        print("Creating instance")
+        return super(Stack, cls).__new__(cls)
+
+    def __init__(self):
+        print('init')
+        self.numbers = []
+        self.u_n = ''
+
+    def push(self, num):
+        self.numbers.append(num)
+
+    def pop(self, numbers, num):
+        numbers.remove(num)
+
+    def isempty(self, numbers):
+        if len(numbers) == 0:
+            return True
+        return False
+
+    def display(self):
+        print(self.numbers)
+
+    def operation(self):
+        while True:
+
+            print('stack - ', self.numbers)
+            u_n = list(input('enter: ').split())
+
+            if len(u_n) == 1:
+                self.num, self.op = u_n
+
+            s = Stack()
+
+            if self.op == 'push':
+                s.push(self.num)
+            elif self.num == 'display':
+                s.display()
+            elif self.op == 'pop':
+                if s.isempty():
+                    print('List is empty')
+                else:
+                    s.pop(self.num)
+            elif self.num == 'exit' or self.num == 'out':
+                break
+            elif self.num != '':
+                print('Something went wrong!')
+
+
+operation_obj = Stack()
+operation_obj.operation()
+
