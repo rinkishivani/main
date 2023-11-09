@@ -1,0 +1,12 @@
+class Employee:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.pie = 3.14
+
+    def names(self):
+        return self.name, self.age, self.pie
+
+e = Employee('Yash', 21)
+print(e.names())
