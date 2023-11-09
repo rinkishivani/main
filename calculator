@@ -1,0 +1,38 @@
+class Calculator:
+    ''' Simple Calculator'''
+
+    print(' \n Calculator')
+    print('Enter numbers for addtion, subtration, multiplication and division respectivley \n')
+
+    def __init__(self):
+        # print('Calculator \n')
+        self.a = int(input('enter first number: '))
+        self.b = int(input('enter second number: '))
+
+    def add(self):
+        return f"Addtion {self.a + self.b}"
+
+    def sub(self):
+        return f'Subtraction {self.a - self.b}'
+
+    def mul(self):
+        return f' Multiplication {self.a * self.b}'
+
+    def div(self):
+        return f'Division {self.a / self.b}'
+
+add = Calculator()
+'Addition'
+h = add.add()
+
+# print(type(h))
+print(add.add())
+
+sub = Calculator()
+print(sub.sub())
+
+mul = Calculator()
+print(mul.mul())
+
+div = Calculator()
+print(div.div())
