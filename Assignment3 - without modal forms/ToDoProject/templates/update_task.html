@@ -1,0 +1,26 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+  <form method="post" action="{% url 'update-task' task.pk %}">
+    {% csrf_token %}
+    <div class="home">
+           <table class="table">
+               <tr>
+                   <td><button type="submit" formaction="{% url 'home' %}" class="btn-btn-primary"><=</button></td>
+                   <td style="border-bottom:none"><button type="submit" formaction="{% url 'trash' %}" class="btn-btn-primary">Trash</button></td>
+               </tr>
+           </table>
+      </div>
+    <div class="contact-us">
+      <input name="title" placeholder="Task details" type="text" value="{{ task.title }}" />
+      <input name="details" id="task_details" placeholder="Task details" type="text" value="{{ task.title }}" />
+      <script>
+          CKEDITOR.replace(task_details)
+        </script>
+      <button type="submit">UPDATE TASK</button>
+      </div>
+  </form>
+
+{% endblock %}
+

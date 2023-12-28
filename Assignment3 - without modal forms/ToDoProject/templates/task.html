@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="contact-us">
+  <form>
+    {% csrf_token %}
+      <input name="title" type="text" value="{{ task.title }}" disabled  />
+      <textarea name="details" id="task_details" value="{{ task.details }}" disabled >{{ task.details }}</textarea>
+      <script>
+          CKEDITOR.replace(task_details)
+        </script>
+  </form>
+</div>
+{% endblock %}
+

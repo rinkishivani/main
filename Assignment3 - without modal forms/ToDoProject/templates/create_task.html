@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="contact-us">
+  <form method="post" action="{% url 'create-task' %}">
+    {% csrf_token %}
+      <input name="title" placeholder="Task title" type="text" />
+      <textarea name="details" id="task_details" placeholder="Task details"></textarea>
+      <script>
+        CKEDITOR.replace(task_details)
+      </script>
+    <button type="submit">CREATE TASK</button>
+  </form>
+</div>
+{% endblock %}
+
